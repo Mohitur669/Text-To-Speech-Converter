@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     margin: 0 175px;
     padding: 20px 0;
@@ -15,7 +20,7 @@
 
 textarea {
     width: 98%;
-    height:60%;
+    height: 60%;
     border: 1px solid #ced4da;
     border-radius: 10px;
     font-family: Inter;
@@ -76,4 +81,43 @@ textarea:focus {
     background-color: #007bff;
     height: 100%;
     width: 0;
+}
+
+@media screen and (max-width: 390px) {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        margin-left: 20px;
+        margin-right: 1px;
+    }
+
+    .section-container {
+        width: 32vh;
+        height: 50vh;
+        padding-bottom: 0;
+        padding-top: 40px;
+    }
+
+    textarea {
+        width: 88%;
+    }
+
+    .btn-convert {
+        width: 32vh;
+    }
+
+    .audio-container {
+        margin-top: 0;
+    }
+
+    .play {
+        margin-right: 30px;
+    }
+
+    .download {
+        margin-left: 30px;
+    }
 }

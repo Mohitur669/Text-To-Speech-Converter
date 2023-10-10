@@ -77,13 +77,13 @@ const AudioPlayer = ({audioFile}) => {
             </div>
 
             <div>
-                <button className="audio-button" disabled={!audioFile} onClick={() => togglePlay()}>
+                <button className="audio-button play" disabled={!audioFile} onClick={() => togglePlay()}>
                     {
                         isPlaying ? <BsPauseCircleFill className="icon-btn" /> : <AiFillPlayCircle className="icon-btn" />
                     }
                 </button>
 
-                <button className="audio-button" disabled={!audioFile} onClick={() => downloadAudio()}>
+                <button className="audio-button download" disabled={!audioFile} onClick={() => downloadAudio()}>
                     <BiSolidDownload className="icon-btn" />
                 </button>
             </div>
