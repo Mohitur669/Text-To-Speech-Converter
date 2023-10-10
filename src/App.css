@@ -55,6 +55,14 @@ textarea:focus {
     flex-direction: column;
 }
 
+.play {
+    margin-right: 50px;
+}
+
+.download {
+    margin-left: 50px;
+}
+
 .audio-button {
     font-size: 4rem;
     border: transparent;
