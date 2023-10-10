@@ -6,7 +6,7 @@ import {BiSolidDownload} from 'react-icons/bi'
 const AudioPlayer = ({audioFile}) => {
 
     const [isPlaying, setIsPlaying] = useState(false)
-    const [currentTime, setCurrentTIme] = useState(0)
+    const [currentTime, setCurrentTime] = useState(0)
     const [duration, setDuration] = useState(0)
 
     const audioRef = useRef()
@@ -43,7 +43,7 @@ const AudioPlayer = ({audioFile}) => {
     const updateProgressBar = () => {
         const audio = audioRef.current
         const progress = (audio.currentTime / audio.duration) * 100
-        setCurrentTIme(audio.currentTime)
+        setCurrentTime(audio.currentTime)
         progressBarRef.current.style.width = `${progress}%`
     }
 
