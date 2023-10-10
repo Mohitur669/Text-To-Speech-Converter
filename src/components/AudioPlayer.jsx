@@ -13,24 +13,32 @@ const AudioPlayer = ({audioFile}) => {
     const progressBarRef = useRef()
 
     useEffect(() => {
+        const audio = audioRef.current;
+
         if (audioFile) {
-            const audioArrayBuffer = audioFile.AudioStream.buffer
-            const audioURL = URL.createObjectURL(new Blob([audioArrayBuffer], {type: "audio/mpeg"}))
+            const audioArrayBuffer = audioFile.AudioStream.buffer;
+            const audioURL = URL.createObjectURL(new Blob([audioArrayBuffer], {type: "audio/mpeg"}));
 
-            const audio = audioRef.current
-            audio.src = audioURL
+            audio.src = audioURL;
 
-            audio.addEventListener('loaddata', () => {
-                setDuration(audio.duration)
-            })
+            audio.addEventListener('loadeddata', () => {
+                setDuration(audio.duration);
+            });
 
-            audio.addEventListener('timeupdate', updateProgressBar)
+            audio.addEventListener('timeupdate', updateProgressBar);
+            audio.addEventListener('ended', () => {
+                setIsPlaying(false); // Set isPlaying to false when audio has ended
+            });
 
             return () => {
-                URL.revokeObjectURL(audioURL)
-            }
+                URL.revokeObjectURL(audioURL);
+                audio.removeEventListener('timeupdate', updateProgressBar);
+                audio.removeEventListener('ended', () => {
+                    setIsPlaying(false);
+                });
+            };
         }
-    }, [audioFile])
+    }, [audioFile]);
 
     const updateProgressBar = () => {
         const audio = audioRef.current
