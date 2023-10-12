@@ -1,4 +1,4 @@
-# Text to Speech Converter using AWS Polly
+# SpeakIT: A Text to Speech Converter using AWS Polly
 
 This is text-to-speech converter using [AWS Polly](https://aws.amazon.com/polly/) service. It is a simple web application that takes text as input and converts it to speech.
 
