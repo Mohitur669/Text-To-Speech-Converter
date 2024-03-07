@@ -4,7 +4,7 @@ const Section = ({text, setText, convertTextToSpeech}) => {
 
     return (
         <div className="section-container">
-            <textarea
+            <textarea className="text-area"
                 value={text}
                 style={{padding: 15}}
                 placeholder='Write your text to convert. After converting click the play button below to play.'
