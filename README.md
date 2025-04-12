@@ -26,7 +26,7 @@ The project is hosted on Netlify and can be accessed [here](https://mohitur-text
 
 Don't worry AWS free tier grants 5 million characters per month (for using AWS Polly) for the first 12 months.
 
-## Local Setup
+## Run Locally
 
 - Clone the repository
 - Install node modules using `npm install`
@@ -37,8 +37,6 @@ REACT_APP_CLIENTID=<your_aws_access_key_id>
 REACT_APP_SECRETKEY=<your_aws_secret_access_key>
 REACT_APP_REGION=<your_aws_region>
 ```
-
-## Run Locally
 
 - Run the application using `npm start`
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
